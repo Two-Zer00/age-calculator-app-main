@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+
+    --off-black: hsl(0, 0%, 8%);
+
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input {
+    font-size: 1.3rem;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: column;
+    padding: 5.5rem 1rem 1rem 1rem;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--white);
+    width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 1.5rem;
+    border-bottom-right-radius: 7rem;
+    gap: 2.3rem;
+}
+
+main section {
+    width: 100%;
+}
+
+main section:nth-child(1) {
+    padding: 1.5rem .5rem;
+}
+
+main section:nth-child(1) form {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+main section:nth-child(1) form>div {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    max-width: 30%;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    /* para Firefox */
+    appearance: textfield;
+    /* para Chrome, Safari, Edge y Opera */
+}
+
+input[type="number"]:invalid {
+    outline: 1px solid var(--Light-red);
+}
+
+
+input[type="number"]:invalid~small {
+    display: initial;
+}
+
+input[type="number"]:invalid~label {
+    color: var(--Light-red);
+}
+
+button[type="submit"] {
+    display: none;
+}
+
+label {
+    font-size: .75rem;
+    color: var(--smokey-grey);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    order: -1;
+}
+
+form.invalid label {
+    color: var(--Light-red);
+}
+
+form.invalid input {
+    outline: 1px solid var(--Light-red);
+}
+
+form.invalid~small.error {
+    display: initial;
+}
+
+small {
+    color: var(--Light-red);
+    font-style: italic;
+    font-size: .75rem;
+    display: none;
+}
+
+main section:nth-child(1) form>div>input {
+    border: .1rem solid var(--light-grey);
+    border-radius: .75rem;
+    padding: .8rem;
+}
+
+main section:nth-child(2)>hr {
+    border: .06rem solid var(--light-grey);
+}
+
+main section:nth-child(2) {
+    position: relative;
+}
+
+main section:nth-child(2)>img {
+    background-color: var(--purple);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 4rem;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+main section:nth-child(3) {
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    padding: 1.85rem .5rem;
+}
+
+main section:nth-child(3) p {
+    display: flex;
+    flex-direction: row;
+    gap: .4rem;
+    line-height: 100%;
+    letter-spacing: -.01rem;
+}
+
+
+main section:nth-child(3) span:first-child {
+    color: var(--purple);
+}
+
+
+
+
+
+@media screen and (min-width:375px) {
+    input[type="number"] {
+        font-size: 32px;
+    }
+
+    body {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    main {
+        max-width: 840px;
+        gap: 3.25rem;
+        padding: 3.5rem 3rem;
+        border-bottom-right-radius: 12.5rem;
+    }
+
+    main section:nth-child(3) {
+        font-size: 6.5rem;
+        padding: 0rem .5rem;
+        gap: .75rem;
+        justify-content: flex-start;
+    }
+
+    main section:nth-child(3) p {
+        gap: 0rem;
+    }
+
+    main section:nth-child(3) span {
+        letter-spacing: .85rem;
+    }
+
+    main section:nth-child(2) img {
+        left: 92.5%;
+        width: 6rem;
+        top: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+    main section:nth-child(1) {
+        padding: 0rem .5rem;
+    }
+
+    main section:nth-child(1) form>div {
+        gap: .75rem;
+    }
+
+    main section:nth-child(1) form>div>label {
+        letter-spacing: .3rem;
+    }
+
+    main section:nth-child(1) form>div>input {
+        width: 10rem;
+        padding: .5rem 1.5rem;
+    }
+
+    main section:nth-child(1) form {
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    main section:nth-child(1) form input {
+        width: 12rem;
+        display: inline;
+    }
+}
